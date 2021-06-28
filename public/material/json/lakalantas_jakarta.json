@@ -1,0 +1,57 @@
+[
+	{
+		"attributes": {
+			"name": "Kota Jakarta Selatan",
+			"jumlahKasusUnder9": 8,
+			"jumlahKasusUnder15": 23,
+			"jumlahKasusUnder30": 198,
+			"jumlahKasusUnder40": 88,
+			"jumlahKasusUnder50": 93,
+			"jumlahKasusOver51": 76
+		}
+	},
+	{
+		"attributes": {
+			"name": "Kota Jakarta Barat",
+			"jumlahKasusUnder9": 13,
+			"jumlahKasusUnder15": 32,
+			"jumlahKasusUnder30": 251,
+			"jumlahKasusUnder40": 124,
+			"jumlahKasusUnder50": 100,
+			"jumlahKasusOver51": 117
+		}
+	},
+	{
+		"attributes": {
+			"name": "Kota Jakarta Utara",
+			"jumlahKasusUnder9": 18,
+			"jumlahKasusUnder15": 37,
+			"jumlahKasusUnder30": 320,
+			"jumlahKasusUnder40": 177,
+			"jumlahKasusUnder50": 103,
+			"jumlahKasusOver51": 114
+		}
+	},
+	{
+		"attributes": {
+			"name": "Kota Jakarta Timur",
+			"jumlahKasusUnder9": 23,
+			"jumlahKasusUnder15": 89,
+			"jumlahKasusUnder30": 370,
+			"jumlahKasusUnder40": 225,
+			"jumlahKasusUnder50": 167,
+			"jumlahKasusOver51": 195
+		}
+	},
+	{
+		"attributes": {
+			"name": "Kota Jakarta Pusat",
+			"jumlahKasusUnder9": 8,
+			"jumlahKasusUnder15": 22,
+			"jumlahKasusUnder30": 163,
+			"jumlahKasusUnder40": 101,
+			"jumlahKasusUnder50": 65,
+			"jumlahKasusOver51": 87
+		}
+	},
+]
