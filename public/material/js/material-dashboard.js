@@ -370,22 +370,48 @@ md = {
 
       /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
 
-      var dataWebsiteViewsChart = {
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
-        series: [
-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+      var top5Label = []
+      var top5Series = []
 
-        ]
+      $.ajax({
+        type: 'GET',
+        url: 'material/json/lakalantas_jateng.json',
+        dataType: 'json',
+        success: function(datas) { 
+          var wilayahDanTotal = []
+        
+          datas.forEach(data => {
+            var total = Number(data.attributes.meninggal) + Number(data.attributes.lukaBerat) + Number(data.attributes.lukaRingan)
+            wilayahDanTotal.push({
+              wilayah: data.attributes.wilayah,
+              total: total
+            })
+          })
+
+          wilayahDanTotal.sort((a, b) => (a.total < b.total) ? 1 : -1)
+          for(var i = 0; i < 5; i++) {
+            top5Label.push(wilayahDanTotal[i].wilayah)
+            top5Series.push(wilayahDanTotal[i].total)
+          }
+        },
+        async: false
+      });
+      var dataWebsiteViewsChart = {
+        labels: top5Label,
+        series: [top5Series] 
+        
       };
       var optionsWebsiteViewsChart = {
         axisX: {
-          showGrid: false
+          showGrid: true
         },
-        low: 0,
-        high: 1000,
+        stretch: true,
+        // low: 9000000 ,
+        // high: 20000000,
+        onlyInteger: true,
         chartPadding: {
           top: 0,
-          right: 5,
+          right: 0,
           bottom: 0,
           left: 0
         }
@@ -492,6 +518,13 @@ md = {
   startAnimationForLineChart: function(chart) {
 
     chart.on('draw', function(data) {
+      if(data.type === 'label' && data.axis === 'x') {
+    
+        // We just offset the label X position to be in the middle between the current and next axis grid
+        data.element.attr({
+          dx: data.x + data.width / 2, 'text-anchor': 'middle'
+        });
+      }
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
           d: {

@@ -65,8 +65,8 @@
 
     var kasuslakalantas = L.geoJson(null, {
         style: function (feature) {
-            var totalKasus = feature.properties.meninggal + feature.properties.lukaBerat + feature.properties.lukaRingan
-            if (totalKasus <= 200000) {
+            var totalKasus = Number(feature.properties.meninggal) + Number(feature.properties.lukaBerat) + Number(feature.properties.lukaRingan)
+            if (totalKasus <= 400) {
                 return {
                     opacity: 1,
                     color: 'white',
@@ -75,7 +75,7 @@
                     fillColor: 'rgb(240, 255, 0)'
                 }
             }
-            else if (totalKasus >= 200001 && totalKasus <= 400000) {
+            else if (totalKasus >= 401 && totalKasus <= 800) {
                 return {
                     opacity: 1,
                     color: 'white',
@@ -84,7 +84,7 @@
                     fillColor: 'rgb(255, 206, 0)'
                 }
             }
-            else if (totalKasus >= 400001 && totalKasus <= 600000) {
+            else if (totalKasus >= 801 && totalKasus <= 1200) {
                 return {
                     opacity: 1,
                     color: 'white',
@@ -93,7 +93,7 @@
                     fillColor: 'rgb(255, 154, 0)'
                 }
             }
-            else if (totalKasus >= 600001 && totalKasus <= 800000) {
+            else if (totalKasus >= 1201 && totalKasus <= 1600) {
                 return {
                     opacity: 1,
                     color: 'white',
@@ -102,7 +102,7 @@
                     fillColor: 'rgb(255, 90, 0)'
                 }
             }
-            else if (totalKasus > 800001) {
+            else if (totalKasus > 1601) {
                 return {
                     opacity: 1,
                     color: 'white',
@@ -133,7 +133,7 @@
                         fillColor: "#00FFFF",
                         fillOpacity: 0.8,
                     });
-                    kasuslakalantas.bindTooltip("Wilayah " + feature.properties.dak_nkab + "<br>Jumlah kasus: " + numberWithCommas(feature.properties.meninggal + feature.properties.lukaBerat + feature.properties.lukaRingan),
+                    kasuslakalantas.bindTooltip("Wilayah " + feature.properties.dak_nkab + "<br>Jumlah kasus: " + numberWithCommas(Number(feature.properties.meninggal) + Number(feature.properties.lukaBerat) + Number(feature.properties.lukaRingan)),
                         {sticky: true});
                 },
                 mouseout: function (e) {
@@ -157,11 +157,11 @@
     legend.onAdd = function(map) {
         var div = L.DomUtil.create("div", "legend");
         div.innerHTML += "<h4>Legenda</h4>";
-        div.innerHTML += '<i style="background: #F0FF00"></i><span>1 - 200000 Kasus</span><br>';
-        div.innerHTML += '<i style="background: #FFCE00"></i><span>200001 - 400000 Kasus</span><br>';
-        div.innerHTML += '<i style="background: #FF9A00FF"></i><span>400001 - 600000 Kasus</span><br>';
-        div.innerHTML += '<i style="background: #FF5A00FF"></i><span>600001 - 800000 Kasus</span><br>';
-        div.innerHTML += '<i style="background: #FF0000FF"></i><span>> 800000 Kasus</span><br>';
+        div.innerHTML += '<i style="background: #F0FF00"></i><span>1 - 400 Kasus</span><br>';
+        div.innerHTML += '<i style="background: #FFCE00"></i><span>401 - 800 Kasus</span><br>';
+        div.innerHTML += '<i style="background: #FF9A00FF"></i><span>801 - 1200 Kasus</span><br>';
+        div.innerHTML += '<i style="background: #FF5A00FF"></i><span>1201 - 1600 Kasus</span><br>';
+        div.innerHTML += '<i style="background: #FF0000FF"></i><span>> 1600 Kasus</span><br>';
         return div;
     };
     legend.addTo(mymap);
