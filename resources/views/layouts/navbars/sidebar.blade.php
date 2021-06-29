@@ -9,9 +9,9 @@
         <a href="https://creative-tim.com/" class="simple-text logo-normal">
             Pemetaan Korban
             <br>
-            Lakalantas Menurut
+            Lakalantas di
             <br>
-            Kelompok Umur di Jakarta
+            Jawa Tengah
         </a>
     </div>
     <div class="sidebar-wrapper">

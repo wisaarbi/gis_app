@@ -4,17 +4,60 @@
 <div id="map">
     <div id="mapid" style="height: 100%; width: 100%"></div>
 </div>
+<style>
+    /*Legend specific*/
+    .legend {
+        padding: 6px 8px;
+        font: 14px Arial, Helvetica, sans-serif;
+        background: white;
+        background: rgba(255, 255, 255, 0.8);
+        /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+        /*border-radius: 5px;*/
+        line-height: 24px;
+        color: #555;
+    }
+    .legend h4 {
+        text-align: center;
+        font-size: 16px;
+        margin: 2px 12px 8px;
+        color: #777;
+    }
+
+    .legend span {
+        position: relative;
+        bottom: 3px;
+    }
+
+    .legend i {
+        width: 18px;
+        height: 18px;
+        float: left;
+        margin: 0 8px 0 0;
+        opacity: 0.7;
+    }
+
+    .legend i.icon {
+        background-size: 18px;
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+</style>
 @endsection
 
 @push('js')
 <script>
-    var mymap = L.map('mapid').setView([-6.200000, 106.816666], 12);
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    var mymap = L.map('mapid').setView([-6.995016, 110.418427], 12);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
             'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        id: 'mapbox/streets-v11',
+        id: 'mapbox/light-v9',
         tileSize: 512,
         zoomOffset: -1
     }).addTo(mymap);
@@ -22,25 +65,62 @@
 
     var kasuslakalantas = L.geoJson(null, {
         style: function (feature) {
-            return {
-                opacity: 1,
-                color: 'gray',
-                weight: 1.0,
-                fillOpacity: 0.8,
-                fillColor: 'rgb(37, 150, 210)'
+            var totalKasus = feature.properties.meninggal + feature.properties.lukaBerat + feature.properties.lukaRingan
+            if (totalKasus <= 200000) {
+                return {
+                    opacity: 1,
+                    color: 'white',
+                    weight: 2.0,
+                    fillOpacity: 0.8,
+                    fillColor: 'rgb(240, 255, 0)'
+                }
+            }
+            else if (totalKasus >= 200001 && totalKasus <= 400000) {
+                return {
+                    opacity: 1,
+                    color: 'white',
+                    weight: 2.0,
+                    fillOpacity: 0.8,
+                    fillColor: 'rgb(255, 206, 0)'
+                }
+            }
+            else if (totalKasus >= 400001 && totalKasus <= 600000) {
+                return {
+                    opacity: 1,
+                    color: 'white',
+                    weight: 2.0,
+                    fillOpacity: 0.8,
+                    fillColor: 'rgb(255, 154, 0)'
+                }
+            }
+            else if (totalKasus >= 600001 && totalKasus <= 800000) {
+                return {
+                    opacity: 1,
+                    color: 'white',
+                    weight: 2.0,
+                    fillOpacity: 0.8,
+                    fillColor: 'rgb(255, 90, 0)'
+                }
+            }
+            else if (totalKasus > 800001) {
+                return {
+                    opacity: 1,
+                    color: 'white',
+                    weight: 2.0,
+                    fillOpacity: 0.8,
+                    fillColor: 'rgb(255, 0, 0)'
+                }
             }
         },
         onEachFeature: function (feature, layer) {
             var content = "<div class='card'>" +
-                "<div class='card-header alert-primary text-center p-1'><strong>Kota Jakarta<br>" + feature.properties.name + "</strong></div>" +
+                "<div class='card-header alert-primary text-center p-1'><strong>Provinsi Jawa Tengah<br>Wilayah " + feature.properties.dak_nkab + "</strong></div>" +
                 "<div class='card-body p-0'>" +
                 "<table class='table table-responsive-sm m-0'>" +
-                "<tr><th><i class='far fa-sad-tear'></i> 0-9 Tahun</th><th>" + feature.properties.Kasus_Under_9 + "</th></tr>" +
-                "<tr class='text-success'><th><i class='far fa-smile'></i> 9 - 15 Tahun</th><th>" + feature.properties.Kasus_Under_15 + "</th></tr>" +
-                "<tr class='text-danger'><th><i class='far fa-frown'></i> 16 - 30 Tahun</th><th>" + feature.properties.Kasus_Under_30 + "</th></tr>" +
-                "<tr class='text-danger'><th><i class='far fa-frown'></i> 31 - 40 Tahun</th><th>" + feature.properties.Kasus_Under_40 + "</th></tr>" +
-                "<tr class='text-danger'><th><i class='far fa-frown'></i> 41 - 50 Tahun</th><th>" + feature.properties.Kasus_Under_50 + "</th></tr>" +
-                "<tr class='text-danger'><th><i class='far fa-frown'></i> > 51 Tahun</th><th>" + feature.properties.Kasus_Over_51 + "</th></tr>" +
+                "<tr class='text-secondary'><th> Meninggal</th><th>" + feature.properties.meninggal + "</th></tr>" +
+                "<tr class='text-secondary'><th> Luka Berat</th><th>" + feature.properties.lukaBerat + "</th></tr>" +
+                "<tr class='text-secondary'><th> Luka Ringan</th><th>" + feature.properties.lukaRingan + "</th></tr>" +
+                "<tr class='text-secondary'><th> Kerugian Material</th><th>" + numberWithCommas(Math.round(feature.properties.kerugianMaterial / 1000)) + "K" + "</th></tr>" +
                 "</table>" +
                 "</div>";
             layer.on({
@@ -53,12 +133,11 @@
                         fillColor: "#00FFFF",
                         fillOpacity: 0.8,
                     });
-                    kasuslakalantas.bindTooltip("Kota. " + feature.properties.name + "<br>Jumlah kasus: " + (feature.properties.Kasus_Under_9 + feature.properties.Kasus_Under_15 + feature.properties.Kasus_Under_30 + feature.properties.Kasus_Under_40 + feature.properties.Kasus_Under_50 + feature.properties.Kasus_Over_51),
+                    kasuslakalantas.bindTooltip("Wilayah " + feature.properties.dak_nkab + "<br>Jumlah kasus: " + numberWithCommas(feature.properties.meninggal + feature.properties.lukaBerat + feature.properties.lukaRingan),
                         {sticky: true});
                 },
                 mouseout: function (e) {
                     kasuslakalantas.resetStyle(e.target);
-                    mymap.closePopup();
                 },
                 click: function (e) {
                     kasuslakalantas.bindPopup(content);
@@ -71,5 +150,20 @@
         mymap.addLayer(kasuslakalantas);
         mymap.fitBounds(kasuslakalantas.getBounds());
     });
+
+    /*Legend specific*/
+    var legend = L.control({ position: "bottomleft" });
+
+    legend.onAdd = function(map) {
+        var div = L.DomUtil.create("div", "legend");
+        div.innerHTML += "<h4>Legenda</h4>";
+        div.innerHTML += '<i style="background: #F0FF00"></i><span>1 - 200000 Kasus</span><br>';
+        div.innerHTML += '<i style="background: #FFCE00"></i><span>200001 - 400000 Kasus</span><br>';
+        div.innerHTML += '<i style="background: #FF9A00FF"></i><span>400001 - 600000 Kasus</span><br>';
+        div.innerHTML += '<i style="background: #FF5A00FF"></i><span>600001 - 800000 Kasus</span><br>';
+        div.innerHTML += '<i style="background: #FF0000FF"></i><span>> 800000 Kasus</span><br>';
+        return div;
+    };
+    legend.addTo(mymap);
 </script>
 @endpush

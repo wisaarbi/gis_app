@@ -1,0 +1,317 @@
+[
+    {
+        "attributes": {
+            "wilayah": "KAB. CILACAP",
+            "meninggal": "172",
+            "lukaBerat": "1",
+            "lukaRingan": "1035",
+            "kerugianMaterial": "620700000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. BANYUMAS",
+            "meninggal": "217",
+            "lukaBerat": "1",
+            "lukaRingan": "1765",
+            "kerugianMaterial": "952820000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. PURBALINGGA",
+            "meninggal": "75",
+            "lukaBerat": "0",
+            "lukaRingan": "497",
+            "kerugianMaterial": "239100000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. BANJARNEGARA",
+            "meninggal": "75",
+            "lukaBerat": "4",
+            "lukaRingan": "528",
+            "kerugianMaterial": "518650000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. KEBUMEN",
+            "meninggal": "121",
+            "lukaBerat": "0",
+            "lukaRingan": "732",
+            "kerugianMaterial": "891200000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. PURWOREJO",
+            "meninggal": "87",
+            "lukaBerat": "0",
+            "lukaRingan": "561",
+            "kerugianMaterial": "373200000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. WONOSOBO",
+            "meninggal": "53",
+            "lukaBerat": "2",
+            "lukaRingan": "319",
+            "kerugianMaterial": "186765000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. MAGELANG",
+            "meninggal": "135",
+            "lukaBerat": "2",
+            "lukaRingan": "941",
+            "kerugianMaterial": "254050000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. BOYOLALI",
+            "meninggal": "91",
+            "lukaBerat": "1",
+            "lukaRingan": "1087",
+            "kerugianMaterial": "278400000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. KLATEN",
+            "meninggal": "142",
+            "lukaBerat": "7",
+            "lukaRingan": "1712",
+            "kerugianMaterial": "1153540000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. SUKOHARJO",
+            "meninggal": "80",
+            "lukaBerat": "1",
+            "lukaRingan": "1186",
+            "kerugianMaterial": "647700000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. WONOGIRI",
+            "meninggal": "65",
+            "lukaBerat": "0",
+            "lukaRingan": "754",
+            "kerugianMaterial": "269900000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. KARANGANYAR",
+            "meninggal": "99",
+            "lukaBerat": "4",
+            "lukaRingan": "1208",
+            "kerugianMaterial": "388300000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. SRAGEN",
+            "meninggal": "126",
+            "lukaBerat": "0",
+            "lukaRingan": "909",
+            "kerugianMaterial": "790550000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. GROBOGAN",
+            "meninggal": "123",
+            "lukaBerat": "2",
+            "lukaRingan": "577",
+            "kerugianMaterial": "159150000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. BLORA",
+            "meninggal": "70",
+            "lukaBerat": "6",
+            "lukaRingan": "357",
+            "kerugianMaterial": "131120000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. REMBANG",
+            "meninggal": "93",
+            "lukaBerat": "0",
+            "lukaRingan": "397",
+            "kerugianMaterial": "453850000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. PATI",
+            "meninggal": "153",
+            "lukaBerat": "1",
+            "lukaRingan": "1446",
+            "kerugianMaterial": "679880000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. KUDUS",
+            "meninggal": "109",
+            "lukaBerat": "0",
+            "lukaRingan": "890",
+            "kerugianMaterial": "317200000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. JEPARA",
+            "meninggal": "97",
+            "lukaBerat": "0",
+            "lukaRingan": "363",
+            "kerugianMaterial": "149000000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. DEMAK",
+            "meninggal": "154",
+            "lukaBerat": "5",
+            "lukaRingan": "582",
+            "kerugianMaterial": "209900000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. SEMARANG",
+            "meninggal": "121",
+            "lukaBerat": "1",
+            "lukaRingan": "539",
+            "kerugianMaterial": "283100000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. TEMANGGUNG",
+            "meninggal": "59",
+            "lukaBerat": "0",
+            "lukaRingan": "350",
+            "kerugianMaterial": "369400000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. KENDAL",
+            "meninggal": "114",
+            "lukaBerat": "2",
+            "lukaRingan": "426",
+            "kerugianMaterial": "240450000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. BATANG",
+            "meninggal": "118",
+            "lukaBerat": "3",
+            "lukaRingan": "453",
+            "kerugianMaterial": "1060450000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. PEKALONGAN",
+            "meninggal": "53",
+            "lukaBerat": "1",
+            "lukaRingan": "254",
+            "kerugianMaterial": "652000000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. PEMALANG",
+            "meninggal": "100",
+            "lukaBerat": "1",
+            "lukaRingan": "507",
+            "kerugianMaterial": "248550000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. TEGAL",
+            "meninggal": "134",
+            "lukaBerat": "0",
+            "lukaRingan": "506",
+            "kerugianMaterial": "316800000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KAB. BREBES",
+            "meninggal": "171",
+            "lukaBerat": "1",
+            "lukaRingan": "972",
+            "kerugianMaterial": "867300000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KOTA MAGELANG",
+            "meninggal": "25",
+            "lukaBerat": "0",
+            "lukaRingan": "227",
+            "kerugianMaterial": "103250000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KOTA SURAKARTA",
+            "meninggal": "50",
+            "lukaBerat": "0",
+            "lukaRingan": "852",
+            "kerugianMaterial": "293200000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KOTA SALATIGA",
+            "meninggal": "33",
+            "lukaBerat": "0",
+            "lukaRingan": "264",
+            "kerugianMaterial": "149500000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KOTA SEMARANG",
+            "meninggal": "121",
+            "lukaBerat": "1",
+            "lukaRingan": "539",
+            "kerugianMaterial": "427950000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KOTA PEKALONGAN",
+            "meninggal": "25",
+            "lukaBerat": "2",
+            "lukaRingan": "117",
+            "kerugianMaterial": "13400000"
+        }
+    },
+    {
+        "attributes": {
+            "wilayah": "KOTA TEGAL",
+            "meninggal": "17",
+            "lukaBerat": "0",
+            "lukaRingan": "254",
+            "kerugianMaterial": "56200000"
+        }
+    }
+]
