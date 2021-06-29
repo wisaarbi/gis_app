@@ -53,13 +53,12 @@
                         fillColor: "#00FFFF",
                         fillOpacity: 0.8,
                     });
-                    kasuslakalantas.bindTooltip("Kota. " + feature.properties.name + "<br>Jumlah kasus: ", (feature.properties.Kasus_Under_9 +
-                        feature.properties.Kasus_Under_15 + feature.properties.Kasus_Under_30 + feature.properties.Kasus_Under_40 + feature.properties.Kasus_Under_50 +
-                        feature.properties.Kasus_Over_51), {sticky: true});
+                    kasuslakalantas.bindTooltip("Kota. " + feature.properties.name + "<br>Jumlah kasus: " + (feature.properties.Kasus_Under_9 + feature.properties.Kasus_Under_15 + feature.properties.Kasus_Under_30 + feature.properties.Kasus_Under_40 + feature.properties.Kasus_Under_50 + feature.properties.Kasus_Over_51),
+                        {sticky: true});
                 },
                 mouseout: function (e) {
                     kasuslakalantas.resetStyle(e.target);
-                    map.closePopup();
+                    mymap.closePopup();
                 },
                 click: function (e) {
                     kasuslakalantas.bindPopup(content);
@@ -69,8 +68,8 @@
     });
     $.getJSON("geojson_polygon.php", function (data) {
         kasuslakalantas.addData(data);
-        map.addLayer(kasuslakalantas);
-        map.fitBounds(kasuslakalantas.getBounds());
+        mymap.addLayer(kasuslakalantas);
+        mymap.fitBounds(kasuslakalantas.getBounds());
     });
 </script>
 @endpush

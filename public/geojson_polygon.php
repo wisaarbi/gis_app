@@ -1,8 +1,8 @@
 <?php
-$lakalantasJakarta = file_get_contents("json/lakalantas_jakarta.json");
+$lakalantasJakarta = file_get_contents("material/json/lakalantas_jakarta.json");
 $kasusKota = json_decode($lakalantasJakarta, TRUE);
 
-$geoJsonKotaJakarta = file_get_contents("geojson/id-jk.min.geojson");
+$geoJsonKotaJakarta = file_get_contents("material/geojson/id-jk.min.geojson");
 $pointKotaJakarta = json_decode($geoJsonKotaJakarta, TRUE);
 
 foreach ($pointKotaJakarta['features'] as $key => $first_value) {
